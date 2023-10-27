@@ -47,8 +47,9 @@ RUN mkdir -p /tmp/bitnami/pkg/cache/ && cd /tmp/bitnami/pkg/cache/ && \
 	
 RUN apt-get update -y
 RUN git clone --depth=1 --branch="MOODLE_400_STABLE" https://github.com/moodle/moodle.git /opt/bitnami/moodle
+RUN rm -rf /opt/bitnami/moodle/.git
 
-RUN apt-get autoremove --purge -y curl && \
+RUN apt-get autoremove --purge -y curl git && \
     apt-get update && apt-get upgrade -y && \
     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
