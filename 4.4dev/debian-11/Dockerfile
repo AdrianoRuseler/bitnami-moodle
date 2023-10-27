@@ -32,7 +32,7 @@ RUN mkdir -p /tmp/bitnami/pkg/cache/ && cd /tmp/bitnami/pkg/cache/ && \
       "apache-2.4.57-12-linux-${OS_ARCH}-debian-11" \
       "postgresql-client-13.12.0-1-linux-${OS_ARCH}-debian-11" \
       "mysql-client-11.1.2-0-linux-${OS_ARCH}-debian-11" \
-      "libphp-8.1.24-0-linux-${OS_ARCH}-debian-11" \
+      "libphp-8.2.12-0-linux-${OS_ARCH}-debian-11" \
       "render-template-1.0.6-1-linux-${OS_ARCH}-debian-11" \
  #     "moodle-4.4dev-0-linux-${OS_ARCH}-debian-11" \
     ) && \
