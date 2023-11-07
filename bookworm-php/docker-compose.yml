@@ -1,0 +1,14 @@
+version: '3'
+name: moodle-php-bookworm
+services:
+  webserver:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - '8080:80'
+    volumes:     
+      - 'html_data:/var/www/html/'
+volumes:
+  html_data:
+    driver: local
