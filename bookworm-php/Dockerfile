@@ -20,6 +20,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 ADD setup/locales-gen.sh /tmp/setup/locales-gen.sh
 RUN /tmp/setup/locales-gen.sh
 
+# Setup the required extensions.
+ADD setup/php-extensions.sh /tmp/setup/php-extensions.sh
+RUN /tmp/setup/php-extensions.sh
+
 
 COPY ./public-html/ /var/www/html/
 
