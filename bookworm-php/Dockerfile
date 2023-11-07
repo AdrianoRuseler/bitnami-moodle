@@ -24,7 +24,20 @@ RUN /tmp/setup/locales-gen.sh
 ADD setup/php-extensions.sh /tmp/setup/php-extensions.sh
 RUN /tmp/setup/php-extensions.sh
 
-
 COPY ./public-html/ /var/www/html/
+
+RUN mkdir /var/www/moodledata && chown www-data /var/www/moodledata && \
+    mkdir /var/www/phpunitdata && chown www-data /var/www/phpunitdata && \
+    mkdir /var/www/behatdata && chown www-data /var/www/behatdata && \
+    mkdir /var/www/behatfaildumps && chown www-data /var/www/behatfaildumps
+
+ADD usr /usr
+
+# Fix the original permissions of /tmp, the PHP default upload tmp dir.
+RUN chmod 777 /tmp && chmod +t /tmp
+
+CMD ["apache2-foreground"]
+ENTRYPOINT ["moodle-docker-php-entrypoint"]
+
 
 
