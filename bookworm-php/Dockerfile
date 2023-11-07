@@ -24,7 +24,10 @@ RUN /tmp/setup/locales-gen.sh
 ADD setup/php-extensions.sh /tmp/setup/php-extensions.sh
 RUN /tmp/setup/php-extensions.sh
 
-COPY ./public-html/ /var/www/html/
+# COPY ./public-html/ /var/www/html/
+
+RUN git clone --depth=1 --branch="MOODLE_403_STABLE" https://github.com/moodle/moodle.git /var/www/html/
+RUN rm -rf /var/www/html/.git
 
 RUN mkdir /var/www/moodledata && chown www-data /var/www/moodledata && \
     mkdir /var/www/phpunitdata && chown www-data /var/www/phpunitdata && \
