@@ -8,7 +8,10 @@ services:
     ports:
       - '8080:80'
     volumes:     
-      - 'html_data:/var/www/html/'
+      - 'moodle_html:/var/www/html/'
+      - 'moodle_data:/var/www/moodledata'  
 volumes:
-  html_data:
+  moodle_html:
+    driver: local
+  moodle_data:
     driver: local
