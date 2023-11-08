@@ -3,7 +3,8 @@ name: pma
 services:
   db:
 #    image: mariadb:latest
-    image: yobasystems/alpine-mariadb
+    image: mysql:latest
+#    image: yobasystems/alpine-mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "m@0dl3ing"
