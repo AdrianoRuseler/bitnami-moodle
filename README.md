@@ -15,8 +15,8 @@ docker-compose up -d
 ```
 [Type in the Windows file explorer](https://stackoverflow.com/questions/43181654/locating-data-volumes-in-docker-desktop-windows)
     For Docker version 20.10.+ : 
-```console	
-	\\wsl$\docker-desktop-data\data\docker\volumes
+```console
+\\wsl$\docker-desktop-data\data\docker\volumes
 ```	
 	
 **Warning**: This quick setup is only intended for development environments. You are encouraged to change the insecure default credentials and check out the available configuration options in the [Environment Variables](#environment-variables) section for a more secure deployment.
