@@ -30,11 +30,13 @@ RUN install_packages acl git ca-certificates cron curl libaudit1 libbrotli1 libb
 RUN mkdir -p /tmp/bitnami/pkg/cache/ ; cd /tmp/bitnami/pkg/cache/ ; \
     COMPONENTS=( \
       "render-template-1.0.6-13-linux-${OS_ARCH}-debian-12" \
-      "php-8.1.28-7-linux-${OS_ARCH}-debian-12" \
+     # "php-8.1.28-7-linux-${OS_ARCH}-debian-12" \
+      "php-8.3.8-0-linux-${OS_ARCH}-debian-12" \
       "apache-2.4.59-2-linux-${OS_ARCH}-debian-12" \
       "postgresql-client-13.15.0-1-linux-${OS_ARCH}-debian-12" \
       "mysql-client-11.3.2-3-linux-${OS_ARCH}-debian-12" \
-      "libphp-8.1.28-1-linux-${OS_ARCH}-debian-12" \
+#      "libphp-8.1.28-1-linux-${OS_ARCH}-debian-12" \
+      "libphp-8.3.8-0-linux-${OS_ARCH}-debian-12" \
 #      "moodle-4.4.0-1-linux-${OS_ARCH}-debian-12" \
     ) ; \
     for COMPONENT in "${COMPONENTS[@]}"; do \
