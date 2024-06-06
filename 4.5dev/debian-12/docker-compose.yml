@@ -35,10 +35,29 @@ services:
       - 'moodledata_data:/bitnami/moodledata'
     depends_on:
       - mariadb
+
+          # https://mailpit.axllent.org/
+  mailpit: # You need to ensure you map the correct ports (default Web UI on 8025 and SMTP on 1025).
+    image: axllent/mailpit
+    container_name: mailpit
+    restart: always
+    volumes:
+      - 'mailpit_data:/bitnami/mailpit'
+    ports:
+      - 8025:8025
+      - 1025:1025
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATA_FILE: /bitnami/mailpit/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1 
+
 volumes:
   mariadb_data:
     driver: local
   moodle_data:
     driver: local
   moodledata_data:
+    driver: local
+  mailpit_data:
     driver: local
