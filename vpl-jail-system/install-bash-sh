@@ -1,0 +1,34 @@
+#!/bin/sh
+# package:		Part of VPL-Jail-System
+# copyright:    Copyright (C) 2014 Juan Carlos Rodriguez-del-Pino
+# license:      GNU/GPL, see LICENSE.txt or http://www.gnu.org/licenses/gpl.txt
+# Description:  Script to install bash
+
+if [ -x "$(command -v bash)" ] ; then
+	exit 0
+fi
+
+# Fixes UID if needed
+if [ -z "$UID" ] ; then
+	UID=$(id -u)
+	EUID=$(id -u -r)
+fi
+# Checks running as root
+if [ "$UID" != "0" ] && [ "$EUID" != "0" ] ; then
+	echo "This script need to be run as user root and is run as user $USER uid $UID euid $EUID"
+	exit 1
+fi
+
+mkdir -p /var/log &> /dev/null
+LOGFILE=/var/log/vpl_installation.log
+touch $LOGFILE &> /dev/null
+chmod 600 $LOGFILE
+
+# Install bash after detecting package manager (DNF/APT/APK)
+if [ "$(command -v dnf)" != "" ] ; then
+	dnf -y install bash >> "$LOGFILE"
+elif [ "$(command -v apt)" != "" ] ; then
+	apt-get -q -y install bash >> "$LOGFILE"
+elif [ "$(command -v apk)" != "" ] ; then
+	apk add bash >> "$LOGFILE"
+fi

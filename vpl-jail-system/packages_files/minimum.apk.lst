@@ -1,0 +1,19 @@
+# Minimum packages for VPL jail system on Linux using APK (Alpine)
+"make" make
+"Autotools automake" automake
+"Autotools autoconf" autoconf
+"LSB" lsb-release-minimal
+"C compiler" gcc
+"C++ compiler" g++
+"SSL library" openssl
+"SSL library" openssl-dev
+"Firewall" iptables
+"X system" xorg-server
+"dbus-x11" dbus-x11
+"VNC server" tigervnc
+"Python XDG" py3-xdg
+"Window manager" fluxbox metacity openbox
+"X resource manager" xrdb
+"xterm" xterm
+"net-tools" net-tools
+"bc" bc

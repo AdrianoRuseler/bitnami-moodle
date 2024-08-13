@@ -1,0 +1,19 @@
+# Standard packages for VPL jail system on Linux using DNF (fedora, etc.)
+"Ada compiler (GNU)" gcc-gnat
+"Assembler" nasm
+"C#/F#/VisualBasic on DotNet" dotnet-sdk-10.0 dotnet-sdk-9.0 dotnet-sdk-8.0 dotnet-sdk-7.0 mono-complete
+"Fortran compiler (GNU)" gcc-gfortran
+"Haskell" haskell-platform
+"JavaScript (Nodejs)" nodejs
+npm "TypeScript" typescript
+npm "Sass" sass
+"Octave (GNU)" octave
+"Pascal compiler" fpc
+"Perl interpreter" perl-Modern-Perl perl
+"Prolog" pl
+"Ruby interpreter" ruby
+"Rust compiler" rust
+"Scala programming language" scala
+"Scheme interpreter" racket
+"TCL interpreter" tcl
+"Valgrind tool" valgrind

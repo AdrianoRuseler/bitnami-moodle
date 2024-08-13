@@ -1,0 +1,36 @@
+name: VPL jail server CI (VPL Moodle Plugin)
+
+on: [workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          path: ~
+
+      - name: Install required software
+        run: |
+          pip install websockets
+          sudo apt-get update
+          sudo apt-get install valgrind
+
+      - name: Run tests of autotools
+        run: ./runTest.sh Autotools_execution
+
+      - name: Run tests of packaging code for distribution
+        run: ./runTest.sh Packaging_for_distribution
+
+      - name: Run unit tests
+        run: ./runTest.sh Unit_tests
+
+      - name: Run WebSocket tests
+        run: ./runTest.sh WebSocket_tests
+
+      - name: Run checks for scripts syntax
+        run: ./runTest.sh Check_scripts

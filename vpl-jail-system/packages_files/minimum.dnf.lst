@@ -1,0 +1,14 @@
+# Minimum packages for VPL jail system on Linux using DNF (fedora, etc.)
+"LSB core" redhat-lsb-core
+"make" make
+"Autotools automake" automake
+"Autotools autoconf" autoconf
+"C compiler" gcc
+"C++ compiler" gcc-c++
+"SSL library" openssl		
+"SSL library" openssl-devel	
+"Firewall" iptables
+"Window manager" fluxbox openbox metacity 
+"xterm" xterm
+"xset" xset
+"VNC server" tigervnc-server

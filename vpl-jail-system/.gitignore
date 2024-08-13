@@ -1,0 +1,20 @@
+/autom4te.cache
+/Build (GNU)
+/aclocal.m4
+/config.status
+/.settings
+/.autotools
+/.cproject
+/.project
+/config.h
+/configure
+/Makefile
+*.h.in?
+*.log
+vpl-jail-system-*
+src/*.o
+*/.deps
+src/vpl-jail-server
+.dirstamp
+tests/websocket-echo-test
+stamp-h1
