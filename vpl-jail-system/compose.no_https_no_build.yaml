@@ -1,0 +1,12 @@
+name: jail-alpine-full
+services:
+  vpl-jail:
+    image: jcrodriguezvpl/jail-alpine-full
+    environment:
+      - VPL_JAIL_SECURE_PORT=0
+      - VPL_RUN_PRIVILEGED=false
+      - VPL_JAIL_JAILPATH=/
+    privileged: false
+    restart: always
+    ports:
+      - 8080:80
